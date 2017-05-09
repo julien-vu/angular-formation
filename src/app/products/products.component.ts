@@ -1,25 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Product } from './products.class'
 
-const PRODUCTS: Product[] = [
-    { id: 11, name: 'Pain' },
-    { id: 12, name: 'Baguette' },
-    { id: 13, name: 'Croissant' },
-    { id: 14, name: 'Pain Raisin' },
-    { id: 15, name: 'Pain Chocolat' }
-];
+import { ProductService } from './products.service';
+
 
 @Component({
     selector: 'products',
     templateUrl: './products.component.html',
     styleUrls: ['./products.component.css']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
 
     title = 'My Product List';
-    products = PRODUCTS;
+
+    products: Product[];
     selectedProduct: Product;
+
+    constructor(private productService: ProductService) { }
+
+    getProducts(): void {
+        this.productService.getProducts().then(products => this.products = products);
+    }
+
+    ngOnInit(): void {
+        this.getProducts();
+    }
 
     onSelect(product: Product): void {
         this.selectedProduct = product;

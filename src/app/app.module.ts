@@ -7,13 +7,17 @@ import { HttpModule } from '@angular/http';
 
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsModule } from './products/products.module'
+import { ProductsModule } from './products/products.module';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AboutComponent,
-        DashboardComponent
+        DashboardComponent,
+        FooterComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
@@ -23,9 +27,7 @@ import { ProductsModule } from './products/products.module'
         ProductsModule,
         routing
     ],
-    providers: [
-
-    ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { routing } from './products.routes';
 import { ProductsComponent } from './products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component'
+import { ProductService } from './products.service';
 
 
 @NgModule({
@@ -17,6 +18,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
         FormsModule,
         routing,
     ],
+    providers: [
+        ProductService
+    ]
 })
 export class ProductsModule {
 }
