@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-export class Product {
-    id: number;
-    name: string;
-}
+import { Product } from './products.class'
 
 const PRODUCTS: Product[] = [
     { id: 11, name: 'Pain' },
@@ -13,14 +10,13 @@ const PRODUCTS: Product[] = [
     { id: 15, name: 'Pain Chocolat' }
 ];
 
-
 @Component({
-    selector: 'product-list',
-    templateUrl: './product-list.component.html',
-    styleUrls: ['./product-list.component.css']
-
+    selector: 'products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.css']
 })
-export class ProductListComponent{
+export class ProductsComponent {
+
     title = 'My Product List';
     products = PRODUCTS;
     selectedProduct: Product;
@@ -28,4 +24,6 @@ export class ProductListComponent{
     onSelect(product: Product): void {
         this.selectedProduct = product;
     }
+
 }
+

@@ -3,8 +3,12 @@
 </h1>
 
 <nav>
-    <a [routerLink]="['/']">
+    <a [routerLink]="['/home']">
         Home
+    </a>
+    |
+    <a [routerLink]="['/products']">
+        Products
     </a>
     |
     <a [routerLink]="['/about']">
@@ -14,9 +18,6 @@
 
 <main>
     <router-outlet></router-outlet>
-
-    <div>----------------</div>
-    <product-list></product-list>
 </main>
 
 
